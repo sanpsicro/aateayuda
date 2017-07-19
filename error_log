@@ -1,0 +1,2 @@
+[19-May-2017 17:05:57 UTC] PHP Warning:  Module 'memcache' already loaded in Unknown on line 0
+[19-May-2017 17:06:02 UTC] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/aateayuda/public_html/welcome.php on line 18
