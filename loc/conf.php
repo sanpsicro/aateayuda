@@ -1,4 +1,4 @@
-<? 
+<?php 
 #Database
 $host="localhost"; 
 $username="opcyons_opcyonet"; 
@@ -10,7 +10,7 @@ $unixid = time();
 if(!function_exists('conectar')):
 	function conectar()
 	{
-		mysql_connect("localhost","opcyons_opcyonet","perpolas128");
+		mysqli_connect("localhost","opcyons_opcyonet","perpolas128");
 		mysql_select_db("opcyons_opcyon");
 	}
 endif;

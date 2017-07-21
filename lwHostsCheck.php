@@ -1,6 +1,6 @@
 <html>
 <body>
-<?
+<?php 
 echo "<h2>Server info</h2>";
 
 $baseurl=$_SERVER['SERVER_NAME'];

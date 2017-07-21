@@ -1,7 +1,7 @@
 [connection]
 hostName = localhost
-userName = opcyons_opcyonet
-password = perpolas128
+userName = root
+password = 
 databaseName = opcyons_opcyon
 databaseCharset = utf8_bin
 persistent = 1

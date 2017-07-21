@@ -15,8 +15,8 @@ list($lat,$long) = explode(',',htmlentities(htmlspecialchars(strip_tags($_GET['l
 echo '<img src="http://maps.googleapis.com/maps/api/staticmap?center='.$lat.','.$long.'&zoom=16&size='.$_GET["wd"].'x'.$_GET["hg"].'&markers=color:red%7C'.$lat.','.$long.'&maptype=roadmap&sensor=false" width="'.$_GET["wd"].'" height="'.$_GET["hg"].'" /><br /><br />';
 
 $gral = $_GET["gr"];
-mysql_connect($host,$username,$pass);
+$link = mysqli_connect($host,$username,$pass,$database);
 $sSQL="UPDATE chatstat SET lat='$lat', longi='$long' where gr='$gral'";
-mysql_db_query($database, "$sSQL");
+mysqli_query($link, $sSQL);
 
 ?>

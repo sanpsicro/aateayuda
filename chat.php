@@ -3,6 +3,15 @@
 
 
 error_reporting(0);
+
+isset($_POST['color']) ? $color = $_POST['color'] : $color ="" ;
+isset($_POST['name']) ? $name= $_POST['name'] : $name="" ;
+isset($_POST['text']) ? $text= $_POST['text'] : $text="" ;
+isset($_POST['op']) ? $op= $_POST['op'] : $op="" ;
+
+
+
+
 require_once "class.MySQL.php";
 include ("conf.php");
 $dbconnect = new MySQL();
@@ -17,8 +26,8 @@ if ($op=="insert"){
 
 $result = $dbconnect->query("select date,name,text,color from chat where general=$name order by date asc");
 $data .= "";
-for ($i = 0; $i < mysql_num_rows($result); $i++)  { 
-  $row_array = mysql_fetch_row($result);
+for ($i = 0; $i < mysqli_num_rows($result); $i++)  { 
+  $row_array = mysqli_fetch_row($result);
   $datero=date_create($row_array[0]);
   $data .= "<div class=\"$row_array[3]\">";
   $data .= "".wordwrap($row_array[2], 40, '<br>',true)."<br /><div class=\"date\">".date_format($datero, 'g:i A')."";

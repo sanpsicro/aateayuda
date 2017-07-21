@@ -1,19 +1,20 @@
-<?
+<?php 
 include('conf.php'); 
+include_once 'customFunctions.php';
 $general=$_GET["gr"];
-$db = mysql_connect($host,$username,$pass);
-mysql_select_db($database,$db);
-$result = mysql_query("SELECT status from chatstat where gr = '$general' LIMIT 1",$db);
-if (mysql_num_rows($result)){ 
-$status=mysql_result($result,0,"status");
+$db = mysqli_connect($host,$username,$pass,$database);
+//mysql_select_db($database,$db);
+$result = mysqli_query($db,"SELECT status from chatstat where gr = '$general' LIMIT 1");
+if (mysqli_num_rows($result)){ 
+$status=mysqli_result($result,0,"status");
 }
 if ($status === 0 || empty($status)) {
 	header("Location: http://aateayuda.com/$general/");
 	} else {}
 
-$result2 = mysql_query("SELECT date from chat where general = '$general' order by date desc LIMIT 1",$db);
-if (mysql_num_rows($result2)){ 
-$fecha=mysql_result($result2,0,"date");
+	$result2 = mysqli_query($db,"SELECT date from chat where general = '$general' order by date desc LIMIT 1");
+if (mysqli_num_rows($result2)){ 
+$fecha=mysqli_result($result2,0,"date");
 }
 $d10=date("Y-m-d H:i:s",time()-86400);
 $today = strtotime($d10);

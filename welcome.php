@@ -12,23 +12,25 @@
 <div class="intro">
 <img src="http://www.aateayuda.com/logohd.png" /><br /><br />
 
-<?
+<?php 
 include('conf.php'); 
-$general=$_GET["gr"];
-$db = mysql_connect($host,$username,$pass);
-mysql_select_db($database,$db);
-$result = mysql_query("SELECT status from chatstat where gr = '$general' LIMIT 1",$db);
-if (mysql_num_rows($result)){ 
-$status=mysql_result($result,0,"status");
+include_once 'customFunctions.php';
+isset($_GET['gr']) ? $general=$_GET["gr"] : $general = "" ;
+
+$db = mysqli_connect($host,$username,$pass,$database);
+//mysql_select_db($database,$db);
+$result = mysqli_query($db,"SELECT status from chatstat where gr = '$general' LIMIT 1");
+if (mysqli_num_rows($result)){ 
+$status=mysqli_result($result,0,"status");
 }
 if ($status == 1 || empty($status)) {
 	echo "Este servicio no esta activo";
 	die();
 	} else {}
 
-$result2 = mysql_query("SELECT date from chat where general = '$general' order by date desc LIMIT 1",$db);
-if (mysql_num_rows($result2)){ 
-$fecha=mysql_result($result2,0,"date");
+	$result2 = mysqli_query($db,"SELECT date from chat where general = '$general' order by date desc LIMIT 1");
+if (mysqli_num_rows($result2)){ 
+$fecha=mysqli_result($result2,0,"date");
 }
 $d10=date("Y-m-d H:i:s",time()-43200);
 $today = strtotime($d10);
@@ -48,7 +50,7 @@ Nuestro objetivo es respaldarlo en momentos difíciles.
 Para facilitar su servicio puede indicarnos su ubicación, esta información solo se usará para brindarle apoyo con mayor rapidez.
 </div>
 </div>
-<div class="menudw"><a href="http://aateayuda.com/gochat.php?gr=<?=$_GET["gr"];?>" class="wtlink">ENTRAR</div>
+<div class="menudw"><a href="gochat.php?gr=<?php echo $general;?>" class="wtlink">ENTRAR</div> <!-- checkpoint --> 
 </div>
 
 

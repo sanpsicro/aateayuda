@@ -9,24 +9,27 @@
 <div class="boty">
 <div class="ncont">
 <div class="intro">
-<?
-include('conf.php'); 
-$general=$_GET["gr"];
-$db = mysql_connect($host,$username,$pass);
-mysql_select_db($database,$db);
-$result = mysql_query("SELECT status from chatstat where gr = '$general' LIMIT 1",$db);
-if (mysql_num_rows($result)){ 
-$status=mysql_result($result,0,"status");
+<?php 
+
+include(dirname(__FILE__).'\conf.php'); 
+include_once dirname(__FILE__).'\..\customFunctions.php';
+$general=$_GET['gr'];
+$db = mysqli_connect($host,$username,$pass,$database);
+//mysql_select_db($database,$db);
+$result = mysqli_query($db,"SELECT status from chatstat where gr = '$general' LIMIT 1") ;
+if (mysqli_num_rows($result)){ 
+$status=mysqli_result($result,0,"status");
+
 }
 
 if ($status == 1 || empty($status)) {
-echo "Chat no activo";
+echo "Chat no activo" ;
 die();
 	} else {}
 
-$result2 = mysql_query("SELECT date from chat where general = '$general' order by date desc LIMIT 1",$db);
-if (mysql_num_rows($result2)){ 
-$fecha=mysql_result($result2,0,"date");
+	$result2 = mysqli_query($db,"SELECT date from chat where general = '$general' order by date desc LIMIT 1");
+if (mysqli_num_rows($result2)){ 
+$fecha=mysqli_result($result2,0,"date");
 }
 $d10=date("Y-m-d H:i:s",time()-43200);
 $today = strtotime($d10);
@@ -42,7 +45,7 @@ if ($last < $today && !empty($fecha)) {
 <script type="text/JavaScript" src="geo.js"></script>
 </div>
 </div>
-<div class="menudw"><a href="close.php" class="wtlink">SI, REGISTRAR</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="get.php?gr=<?=$_GET["gr"]?>" class="wtlink">NO, CORREGIR</a></div>
+<div class="menudw"><a href="close.php" class="wtlink">SI, REGISTRAR</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="get.php?gr=<?php $_GET["gr"]?>" class="wtlink">NO, CORREGIR</a></div>
 </div>
   </body>
 </html>
