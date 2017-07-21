@@ -16,6 +16,7 @@
 include('conf.php'); 
 include_once 'customFunctions.php';
 isset($_GET['gr']) ? $general=$_GET["gr"] : $general = "" ;
+//isset($_GET['fecha']) ? $fecha=$_GET["fecha"] : $fecha = "" ;
 
 $db = mysqli_connect($host,$username,$pass,$database);
 //mysql_select_db($database,$db);
