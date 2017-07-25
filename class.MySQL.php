@@ -59,7 +59,7 @@ class MySQL{
       if ($this->persistent==1){
       	$this->dbo = mysqli_connect('p:'.$this->hostName,$this->userName,$this->password,$this->databaseName) or die(M_ERROR3);
       }else{
-      	$this->dbo = mysqli_connect($this->hostName,$this->userName,$this->password,$this->databaseName) or die(M_ERROR3);   
+      	$this->dbo = mysqli_connect($this->hostName,$this->userName,$this->password,$this->databaseName) or die(M_ERROR3_1 . var_dump($this->databaseName) );   
       }
     }
   }

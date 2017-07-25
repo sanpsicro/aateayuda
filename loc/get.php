@@ -11,8 +11,8 @@
 <div class="intro">
 <?php 
 
-include(dirname(__FILE__).'\conf.php'); 
-include_once dirname(__FILE__).'\..\customFunctions.php';
+include(dirname(__FILE__).'/conf.php'); 
+include_once dirname(__FILE__).'/../customFunctions.php';
 $general=$_GET['gr'];
 $db = mysqli_connect($host,$username,$pass,$database);
 //mysql_select_db($database,$db);
@@ -36,7 +36,7 @@ $today = strtotime($d10);
 $last = strtotime($fecha);
 
 if ($last < $today && !empty($fecha)) {
-		header("Location: http://aateayuda.com/$general/");
+		header("Location: http://app-quam.net/aateayuda.com/$general/");
 	} else {}
 
  ?>
@@ -45,7 +45,7 @@ if ($last < $today && !empty($fecha)) {
 <script type="text/JavaScript" src="geo.js"></script>
 </div>
 </div>
-<div class="menudw"><a href="close.php" class="wtlink">SI, REGISTRAR</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="get.php?gr=<?php $_GET["gr"]?>" class="wtlink">NO, CORREGIR</a></div>
+<div class="menudw"><a href="close.php" class="wtlink">SI, REGISTRAR</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="get.php?gr=<?php echo $_GET["gr"]?>" class="wtlink">NO, CORREGIR</a></div>
 </div>
   </body>
 </html>

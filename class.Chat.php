@@ -54,7 +54,7 @@ window.onload=function(){
 
 ";
   print "<div class=\"boty\">
-<div class=\"top\"><div class=\"location\">Enviar ubicacion <a href=\"http://www.aateayuda.com/loc/get.php?gr=$username\" target=\"_blank\"><img src=\"http://www.aateayuda.com/location.png\" style=\"vertical-align: top;\" border=\"0\" /></a>&nbsp;&nbsp;&nbsp;<a href=\"tel:018008130464\"><img src=\"http://www.aateayuda.com/call.png\" style=\"vertical-align: top;\" border=\"0\" /></a></div></div>
+<div class=\"top\"><div class=\"location\">Enviar ubicacion <a href=\"http://app-quam.net/aateayuda.com/loc/get.php?gr=$username\" target=\"_blank\"><img src=\"http://www.aateayuda.com/location.png\" style=\"vertical-align: top;\" border=\"0\" /></a>&nbsp;&nbsp;&nbsp;<a href=\"tel:018008130464\"><img src=\"http://www.aateayuda.com/call.png\" style=\"vertical-align: top;\" border=\"0\" /></a></div></div>
 "; 
   print "<div class=\"container\" id=\"chatbox\" name=\"chatbox\"></div>";
   print "<input type=\"hidden\" name=\"chatop\" id=\"chatop\" value=\"refresh\">"; 
@@ -63,4 +63,5 @@ window.onload=function(){
   print "<div class=\"sender\"><input class=\"textbox\" type=\"text\" name=\"chattext\" id=\"chattext\" class=\"inpux\"><input id=\"yourButton\" class=\"myButton\" title=\"Enviar\" type=\"button\" value=\"Enviar\" onclick=\"send();this.disabled=true;\"></div></div>";
   }
 }
+//checkpoint
 ?>

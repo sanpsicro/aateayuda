@@ -1,4 +1,5 @@
 <?php 
+//checkpoint
 include('conf.php'); 
 include_once 'customFunctions.php';
 $general=$_GET["gr"];
@@ -9,7 +10,7 @@ if (mysqli_num_rows($result)){
 $status=mysqli_result($result,0,"status");
 }
 if ($status === 0 || empty($status)) {
-	header("Location: http://aateayuda.com/$general/");
+	header("Location: http://app-quam.net/aateayuda.com/$general/");
 	} else {}
 
 	$result2 = mysqli_query($db,"SELECT date from chat where general = '$general' order by date desc LIMIT 1");
@@ -21,7 +22,7 @@ $today = strtotime($d10);
 $last = strtotime($fecha);
 
 if ($last < $today) {
-		header("Location: http://aateayuda.com/$general/");
+		header("Location: http://app-quam.net/aateayuda.com/$general/");
 	} else {}
 
  ?>
@@ -44,7 +45,7 @@ function successFunction(position) {
    $.ajax({
       type: 'POST',
       data: { latitude : lat, longitude : longi },
-      url: 'http://www.aateayuda.com/$gr'
+      url: 'http://app-quam.net/aateayuda.com/$gr'
       //... passing on server
    });
    alert ('Gracias, hemos recibido su ubicacion');

@@ -9,7 +9,7 @@ if (mysqli_num_rows($result)){
 $status=mysqli_result($result,0,"status");
 }
 if ($status == 1 || empty($status)) {
-	header("Location: http://aateayuda.com/$general/");
+	header("Location: http://app-quam.net/aateayuda.com/$general/");
 	} else {}
 
 	$result2 = mysqli_query($db,"SELECT date from chat where general = '$general' order by date desc LIMIT 1");
@@ -21,7 +21,7 @@ $today = strtotime($d10);
 $last = strtotime($fecha);
 
 if ($last < $today && !empty($fecha)) {
-		header("Location: http://aateayuda.com/$general/");
+		header("Location: http://app-quam.net/aateayuda.com/$general/");
 	} else {}
 
  ?>

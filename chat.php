@@ -2,13 +2,15 @@
 <?php 
 
 
-error_reporting(0);
+error_reporting(E_ALL);
 
 isset($_POST['color']) ? $color = $_POST['color'] : $color ="" ;
 isset($_POST['name']) ? $name= $_POST['name'] : $name="" ;
 isset($_POST['text']) ? $text= $_POST['text'] : $text="" ;
 isset($_POST['op']) ? $op= $_POST['op'] : $op="" ;
 
+
+isset($data) ? $data= $data : $data ="" ;
 
 
 
@@ -25,7 +27,7 @@ if ($op=="insert"){
 }
 
 $result = $dbconnect->query("select date,name,text,color from chat where general=$name order by date asc");
-$data .= "";
+$data = $data . "";
 for ($i = 0; $i < mysqli_num_rows($result); $i++)  { 
   $row_array = mysqli_fetch_row($result);
   $datero=date_create($row_array[0]);
