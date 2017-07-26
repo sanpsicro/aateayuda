@@ -90,14 +90,14 @@ class MySQL{
 	 $num=@mysqli_num_rows($result);
 	 if($num==false) return false;
  	 // number of affected fields			
-	 $num_fiel = @mysql_num_fields($result);
+	 $num_fiel = @mysqli_num_fields($result);
 	 if($num_fiel==false)	return false;
  	 // make return array 
 	 for($i=0;$i<$num;$i++){	//loop through affected rows
  	  for($a=0;$a<$num_fiel;$a++){	// and with in it loop through each field in a row
  		 //$curr_key = mysql_field_name($result,$a);	//get the name of the field
 		 //$return_array[$i][$curr_key] = mysql_result($result,$i,$curr_key); // put the value in the array
-     $return_array[$i][$a] = mysql_result($result,$i,$a);					
+     $return_array[$i][$a] = mysqli_result($result,$i,$a);					
 		}
 	 }
 	 return $return_array;			
@@ -107,5 +107,18 @@ class MySQL{
   function close(){ 
     return @mysql_close($this->dbo); 
   } 
+  
+  
+  function mysqli_result($res,$row=0,$col=0){
+  	$numrows = mysqli_num_rows($res);
+  	if ($numrows && $row <= ($numrows-1) && $row >=0){
+  		mysqli_data_seek($res,$row);
+  		$resrow = (is_numeric($col)) ? mysqli_fetch_row($res) : mysqli_fetch_assoc($res);
+  		if (isset($resrow[$col])){
+  			return $resrow[$col];
+  		}
+  	}
+  	return false;
+  }
 }
 ?>
