@@ -10,7 +10,7 @@ if (mysqli_num_rows($result)){
 $status=mysqli_result($result,0,"status");
 }
 if ($status === 0 || empty($status)) {
-	header("Location: http://app-quam.net/aateayuda.com/$general/");
+	header("Location: https://app-quam.net/aateayuda.com/$general/");
 	} else {}
 
 	$result2 = mysqli_query($db,"SELECT date from chat where general = '$general' order by date desc LIMIT 1");
@@ -22,13 +22,13 @@ $today = strtotime($d10);
 $last = strtotime($fecha);
 
 if ($last < $today) {
-		header("Location: http://app-quam.net/aateayuda.com/$general/");
+		header("Location: https://app-quam.net/aateayuda.com/$general/");
 	} else {}
 
  ?>
 <html>
 <head>
-<link href="http://www.aateayuda.com/chatstyle.css" rel="stylesheet" type="text/css" />
+<link href="https://app-quam.net/aateayuda.com/chatstyle.css" rel="stylesheet" type="text/css" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 <script type="text/javascript">
 if (navigator.geolocation) {
@@ -45,7 +45,7 @@ function successFunction(position) {
    $.ajax({
       type: 'POST',
       data: { latitude : lat, longitude : longi },
-      url: 'http://app-quam.net/aateayuda.com/$gr'
+      url: 'https://app-quam.net/aateayuda.com/$gr'
       //... passing on server
    });
    alert ('Gracias, hemos recibido su ubicacion');

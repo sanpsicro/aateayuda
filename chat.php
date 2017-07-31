@@ -1,4 +1,4 @@
-<link href="http://www.aateayuda.com/chatstyle.css" rel="stylesheet" type="text/css" />
+<link href="https://app-quam.net/aateayuda.com/chatstyle.css" rel="stylesheet" type="text/css" />
 <?php 
 
 
@@ -33,7 +33,7 @@ for ($i = 0; $i < mysqli_num_rows($result); $i++)  {
   $datero=date_create($row_array[0]);
   $data .= "<div class=\"$row_array[3]\">";
   $data .= "".wordwrap($row_array[2], 40, '<br>',true)."<br /><div class=\"date\">".date_format($datero, 'g:i A')."";
-  if ($row_array[3] === "bubbledRight") { $data .= "&nbsp;&nbsp;<img src=\"http://www.aateayuda.com/ticks.png\">"; } else {}
+  if ($row_array[3] === "bubbledRight") { $data .= "&nbsp;&nbsp;<img src=\"http://www.app-quam.net/aateayuda.com/ticks.png\">"; } else {}
   $data .= "</div></div>";
 }
 $data .="";

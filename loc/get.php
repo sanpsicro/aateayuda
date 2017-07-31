@@ -2,7 +2,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>AMERICAN ASSIST - ATENCION A CLIENTES</title>
-<link href="http://www.aateayuda.com/chatstyle.css" rel="stylesheet" type="text/css" />
+<link href="https://app-quam.net/aateayuda.com/chatstyle.css" rel="stylesheet" type="text/css" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 </head>
   <body>
@@ -36,7 +36,7 @@ $today = strtotime($d10);
 $last = strtotime($fecha);
 
 if ($last < $today && !empty($fecha)) {
-		header("Location: http://app-quam.net/aateayuda.com/$general/");
+		header("Location: https://app-quam.net/aateayuda.com/$general/");
 	} else {}
 
  ?>

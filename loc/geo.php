@@ -12,7 +12,7 @@ include ("conf.php");
 
 
 list($lat,$long) = explode(',',htmlentities(htmlspecialchars(strip_tags($_GET['latlng']))));
-echo '<img src="http://maps.googleapis.com/maps/api/staticmap?center='.$lat.','.$long.'&zoom=16&size='.$_GET["wd"].'x'.$_GET["hg"].'&markers=color:red%7C'.$lat.','.$long.'&maptype=roadmap&sensor=false" width="'.$_GET["wd"].'" height="'.$_GET["hg"].'" /><br /><br />';
+echo '<img src="https://maps.googleapis.com/maps/api/staticmap?center='.$lat.','.$long.'&zoom=16&size='.$_GET["wd"].'x'.$_GET["hg"].'&markers=color:red%7C'.$lat.','.$long.'&maptype=roadmap&sensor=false&key=AIzaSyDpoXEAhSTxAJE8NUcOithSDVCseaRa_hM" width="'.$_GET["wd"].'" height="'.$_GET["hg"].'" /><br /><br />';
 
 $gral = $_GET["gr"];
 $link = mysqli_connect($host,$username,$pass,$database);

@@ -54,7 +54,7 @@ window.onload=function(){
 
 ";
   print "<div class=\"boty\">
-<div class=\"top\"><div class=\"location\">Enviar ubicacion <a href=\"http://app-quam.net/aateayuda.com/loc/get.php?gr=$username\" target=\"_blank\"><img src=\"http://www.aateayuda.com/location.png\" style=\"vertical-align: top;\" border=\"0\" /></a>&nbsp;&nbsp;&nbsp;<a href=\"tel:018008130464\"><img src=\"http://www.aateayuda.com/call.png\" style=\"vertical-align: top;\" border=\"0\" /></a></div></div>
+<div class=\"top\"><div class=\"location\">Enviar ubicacion <a href=\"https://app-quam.net/aateayuda.com/loc/get.php?gr=$username\" target=\"_blank\"><img src=\"http://www.app-quam.net/aateayuda.com/location.png\" style=\"vertical-align: top;\" border=\"0\" /></a>&nbsp;&nbsp;&nbsp;<a href=\"tel:018008130464\"><img src=\"http://www.app-quam.net/aateayuda.com/call.png\" style=\"vertical-align: top;\" border=\"0\" /></a></div></div>
 "; 
   print "<div class=\"container\" id=\"chatbox\" name=\"chatbox\"></div>";
   print "<input type=\"hidden\" name=\"chatop\" id=\"chatop\" value=\"refresh\">"; 
